@@ -74,6 +74,11 @@ module.exports = configure(function (/* ctx */) {
       // vitePlugins: [
       //   [ 'package-name', { ..pluginOptions.. }, { server: true, client: true } ]
       // ]
+
+      publicPath: "",
+      extendViteConf(viteConf, { isServer, isClient }) {
+        viteConf.base = "";
+      },
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
@@ -97,7 +102,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Dialog', 'Notify', 'LocalStorage']
+      plugins: ['Dialog', 'Notify', 'LocalStorage'],
     },
 
     // animations: 'all', // --- includes all animations
